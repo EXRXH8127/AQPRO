@@ -1,36 +1,40 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>AQUALIGHT PRO - COMPLETE SECURITY</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;800&family=Prompt:wght@500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;800&family=Prompt:wght@500;700&display=swap"
+        rel="stylesheet">
     <style>
-        body { 
-            font-family: 'Sarabun', sans-serif; 
-            background: #001f3f; 
-            color: white; 
-            margin: 0; 
-            overflow: hidden; 
-            height: 100vh; 
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background: #001f3f;
+            color: white;
+            margin: 0;
+            overflow: hidden;
+            height: 100vh;
             width: 100vw;
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         /* ============================================================
            ส่วนพื้นหลังตู้ปลาจำลอง (Aquarium Simulation) ที่แก้ไขเพิ่มวาฬและเต่า
            ============================================================ */
-        .ocean { 
+        .ocean {
             /* น้ำไล่เฉดสีฟ้า */
             background: linear-gradient(to bottom, #1cb5e0 0%, #000046 100%);
-            width: 100%; 
-            height: 100%; 
-            position: absolute; 
-            top: 0; left: 0;
-            z-index: -1; 
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
             overflow: hidden;
         }
 
@@ -43,12 +47,16 @@
             width: 100%;
             height: 15%;
             /* พื้นทราย */
-            background: 
-                radial-gradient(circle at 20% 50%, #707070 3px, transparent 4px), /* หินเล็ก */
-                radial-gradient(circle at 80% 30%, #505050 5px, transparent 6px), /* หินเล็ก */
-                linear-gradient(to top, #e3c498 0%, #f7e1b5 100%); /* ทรายหลัก */
-            border-radius: 50% 50% 0 0 / 20% 20% 0 0; /* ทำพื้นทรายให้โค้งมน */
-            box-shadow: inset 0 10px 15px rgba(0,0,0,0.2);
+            background:
+                radial-gradient(circle at 20% 50%, #707070 3px, transparent 4px),
+                /* หินเล็ก */
+                radial-gradient(circle at 80% 30%, #505050 5px, transparent 6px),
+                /* หินเล็ก */
+                linear-gradient(to top, #e3c498 0%, #f7e1b5 100%);
+            /* ทรายหลัก */
+            border-radius: 50% 50% 0 0 / 20% 20% 0 0;
+            /* ทำพื้นทรายให้โค้งมน */
+            box-shadow: inset 0 10px 15px rgba(0, 0, 0, 0.2);
         }
 
         /* สาหร่ายจำลอง */
@@ -74,29 +82,91 @@
 
         /* แอนิเมชันสัตว์ทะเลว่ายน้ำ */
         @keyframes swim_right {
-            0% { transform: translate(-10vw, 0px) scaleX(1); }
-            50% { transform: translate(50vw, 10px) scaleX(1); }
-            100% { transform: translate(110vw, 0px) scaleX(1); }
+            0% {
+                transform: translate(-10vw, 0px) scaleX(1);
+            }
+
+            50% {
+                transform: translate(50vw, 10px) scaleX(1);
+            }
+
+            100% {
+                transform: translate(110vw, 0px) scaleX(1);
+            }
         }
 
         @keyframes swim_left {
-            0% { transform: translate(110vw, 0px) scaleX(-1); }
-            50% { transform: translate(50vw, -15px) scaleX(-1); }
-            100% { transform: translate(-10vw, 0px) scaleX(-1); }
+            0% {
+                transform: translate(110vw, 0px) scaleX(-1);
+            }
+
+            50% {
+                transform: translate(50vw, -15px) scaleX(-1);
+            }
+
+            100% {
+                transform: translate(-10vw, 0px) scaleX(-1);
+            }
         }
 
         /* กำหนดค่าสัตว์ทะเลแต่ละตัว */
-        .fish-1 { top: 20%; animation: swim_right 25s infinite linear; animation-delay: 0s; font-size: 1.5rem; }
-        .fish-2 { top: 40%; animation: swim_left 30s infinite linear; animation-delay: -5s; font-size: 2rem; }
-        .fish-3 { top: 70%; animation: swim_right 20s infinite linear; animation-delay: -10s; opacity: 0.3; font-size: 1.5rem; }
-        .fish-4 { top: 15%; animation: swim_left 35s infinite linear; animation-delay: -15s; font-size: 1rem; opacity: 0.2; }
+        .fish-1 {
+            top: 20%;
+            animation: swim_right 25s infinite linear;
+            animation-delay: 0s;
+            font-size: 1.5rem;
+        }
+
+        .fish-2 {
+            top: 40%;
+            animation: swim_left 30s infinite linear;
+            animation-delay: -5s;
+            font-size: 2rem;
+        }
+
+        .fish-3 {
+            top: 70%;
+            animation: swim_right 20s infinite linear;
+            animation-delay: -10s;
+            opacity: 0.3;
+            font-size: 1.5rem;
+        }
+
+        .fish-4 {
+            top: 15%;
+            animation: swim_left 35s infinite linear;
+            animation-delay: -15s;
+            font-size: 1rem;
+            opacity: 0.2;
+        }
 
         /* วาฬเบื้องหลัง */
-        .whale-1 { top: 30%; animation: swim_right 45s infinite linear; animation-delay: -2s; font-size: 6rem; opacity: 0.25; filter: blur(1px); }
+        .whale-1 {
+            top: 30%;
+            animation: swim_right 45s infinite linear;
+            animation-delay: -2s;
+            font-size: 6rem;
+            opacity: 0.25;
+            filter: blur(1px);
+        }
 
         /* เต่าเบื้องหลัง */
-        .turtle-1 { top: 55%; animation: swim_left 35s infinite linear; animation-delay: -8s; font-size: 2.5rem; opacity: 0.35; filter: blur(0.8px); }
-        .turtle-2 { top: 80%; animation: swim_right 40s infinite linear; animation-delay: -18s; font-size: 2rem; opacity: 0.3; }
+        .turtle-1 {
+            top: 55%;
+            animation: swim_left 35s infinite linear;
+            animation-delay: -8s;
+            font-size: 2.5rem;
+            opacity: 0.35;
+            filter: blur(0.8px);
+        }
+
+        .turtle-2 {
+            top: 80%;
+            animation: swim_right 40s infinite linear;
+            animation-delay: -18s;
+            font-size: 2rem;
+            opacity: 0.3;
+        }
 
         /* ฟองอากาศเบื้องหลัง */
         .bubble {
@@ -109,83 +179,256 @@
         }
 
         @keyframes bubble-rise {
-            0% { transform: translateY(0); opacity: 0; }
-            10% { opacity: 0.5; }
-            90% { opacity: 0.5; }
-            100% { transform: translateY(-110vh); opacity: 0; }
+            0% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.5;
+            }
+
+            90% {
+                opacity: 0.5;
+            }
+
+            100% {
+                transform: translateY(-110vh);
+                opacity: 0;
+            }
         }
-        
+
         /* สไตล์ฟองอากาศขนาดต่างๆ */
-        .bubble-1 { width: 20px; height: 20px; left: 20%; animation-duration: 10s; animation-delay: 0s; }
-        .bubble-2 { width: 10px; height: 10px; left: 50%; animation-duration: 15s; animation-delay: 2s; }
-        .bubble-3 { width: 30px; height: 30px; left: 80%; animation-duration: 12s; animation-delay: 5s; }
+        .bubble-1 {
+            width: 20px;
+            height: 20px;
+            left: 20%;
+            animation-duration: 10s;
+            animation-delay: 0s;
+        }
+
+        .bubble-2 {
+            width: 10px;
+            height: 10px;
+            left: 50%;
+            animation-duration: 15s;
+            animation-delay: 2s;
+        }
+
+        .bubble-3 {
+            width: 30px;
+            height: 30px;
+            left: 80%;
+            animation-duration: 12s;
+            animation-delay: 5s;
+        }
+
         /* ============================================================ */
 
-        .glass { 
-            background: rgba(255, 255, 255, 0.15); 
-            backdrop-filter: blur(20px); 
-            border: 2px solid rgba(255, 255, 255, 0.2); 
-            border-radius: 40px; 
+        .glass {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 40px;
         }
-        .page { 
-            transition: all 0.5s ease-in-out; 
-            width: 90%; 
-            max-width: 400px; 
-            max-height: 90vh; /* จำกัดความสูงหน้าจอ */
-            padding: 25px; 
-            opacity: 0; 
-            display: none; 
-            transform: scale(0.9); 
+
+        .page {
+            transition: all 0.5s ease-in-out;
+            width: 90%;
+            max-width: 400px;
+            max-height: 90vh;
+            /* จำกัดความสูงหน้าจอ */
+            padding: 25px;
+            opacity: 0;
+            display: none;
+            transform: scale(0.9);
             flex-direction: column;
-            overflow-y: auto; /* เพิ่มให้เลื่อนขึ้นลงได้ */
-            scrollbar-width: none; /* ซ่อน scrollbar สำหรับ Firefox */
+            overflow-y: auto;
+            /* เพิ่มให้เลื่อนขึ้นลงได้ */
+            scrollbar-width: none;
+            /* ซ่อน scrollbar สำหรับ Firefox */
         }
-        .page::-webkit-scrollbar { display: none; } /* ซ่อน scrollbar สำหรับ Chrome/Safari */
 
-        .active { 
-            opacity: 1; 
-            display: flex; 
-            transform: scale(1); 
+        .page::-webkit-scrollbar {
+            display: none;
         }
-        
-        .fish-box { position: relative; width: 100%; height: 100px; margin-bottom: 15px; overflow: hidden; border-radius: 30px; background: rgba(255,255,255,0.05); flex-shrink: 0; }
-        .fish { font-size: 4rem; position: absolute; animation: swim 10s infinite linear; top: 10px; }
+
+        /* ซ่อน scrollbar สำหรับ Chrome/Safari */
+
+        .active {
+            opacity: 1;
+            display: flex;
+            transform: scale(1);
+        }
+
+        .fish-box {
+            position: relative;
+            width: 100%;
+            height: 100px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            flex-shrink: 0;
+        }
+
+        .fish {
+            font-size: 4rem;
+            position: absolute;
+            animation: swim 10s infinite linear;
+            top: 10px;
+        }
+
         @keyframes swim {
-            0% { transform: translateX(350px) scaleX(1); }
-            45% { transform: translateX(-100px) scaleX(1); }
-            50% { transform: translateX(-100px) scaleX(-1); }
-            95% { transform: translateX(350px) scaleX(-1); }
-            100% { transform: translateX(350px) scaleX(1); }
+            0% {
+                transform: translateX(350px) scaleX(1);
+            }
+
+            45% {
+                transform: translateX(-100px) scaleX(1);
+            }
+
+            50% {
+                transform: translateX(-100px) scaleX(-1);
+            }
+
+            95% {
+                transform: translateX(350px) scaleX(-1);
+            }
+
+            100% {
+                transform: translateX(350px) scaleX(1);
+            }
         }
-        
-        .status-dot { width: 15px; height: 15px; border-radius: 50%; display: inline-block; transition: 0.5s; }
-        .dot-red { background: #ff4d4d; box-shadow: 0 0 15px #ff4d4d; animation: blink 1s infinite; }
-        .dot-green { background: #4ade80; box-shadow: 0 0 15px #4ade80; animation: blink 1s infinite; }
-        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
 
-        .brand { font-family: 'Prompt', sans-serif; text-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-        input[type="time"] { font-size: 2.2rem !important; font-weight: bold; color: #22d3ee; background: rgba(0,0,0,0.2); border-radius: 20px; padding: 10px; border: none; text-align: center; width: 100%; outline: none; }
-        #toast { position: fixed; top: 5%; left: 50%; transform: translateX(-50%); background: #22d3ee; color: #001f3f; padding: 12px 35px; border-radius: 50px; font-weight: 800; font-size: 1.1rem; opacity: 0; transition: 0.3s; z-index: 100; pointer-events: none; }
-        
-        .pass-container { position: relative; width: 100%; }
-        .eye-btn { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); cursor: pointer; font-size: 1.4rem; opacity: 0.6; }
+        .status-dot {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            display: inline-block;
+            transition: 0.5s;
+        }
 
-        .check-box { width: 30px; height: 30px; border: 3px solid #22d3ee; border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: 0.3s; flex-shrink: 0; }
-        .check-box.checked { background: #22d3ee; }
-        .check-box.checked::after { content: '✓'; color: #001f3f; font-weight: 900; }
-        .history-item { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 10px 15px; margin-bottom: 8px; font-size: 0.8rem; border-left: 4px solid #22d3ee; }
+        .dot-red {
+            background: #ff4d4d;
+            box-shadow: 0 0 15px #ff4d4d;
+            animation: blink 1s infinite;
+        }
+
+        .dot-green {
+            background: #4ade80;
+            box-shadow: 0 0 15px #4ade80;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.3;
+            }
+        }
+
+        .brand {
+            font-family: 'Prompt', sans-serif;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        input[type="time"] {
+            font-size: 2.2rem !important;
+            font-weight: bold;
+            color: #22d3ee;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            padding: 10px;
+            border: none;
+            text-align: center;
+            width: 100%;
+            outline: none;
+        }
+
+        #toast {
+            position: fixed;
+            top: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #22d3ee;
+            color: #001f3f;
+            padding: 12px 35px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            opacity: 0;
+            transition: 0.3s;
+            z-index: 100;
+            pointer-events: none;
+        }
+
+        .pass-container {
+            position: relative;
+            width: 100%;
+        }
+
+        .eye-btn {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 1.4rem;
+            opacity: 0.6;
+        }
+
+        .check-box {
+            width: 30px;
+            height: 30px;
+            border: 3px solid #22d3ee;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: 0.3s;
+            flex-shrink: 0;
+        }
+
+        .check-box.checked {
+            background: #22d3ee;
+        }
+
+        .check-box.checked::after {
+            content: '✓';
+            color: #001f3f;
+            font-weight: 900;
+        }
+
+        .history-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 10px 15px;
+            margin-bottom: 8px;
+            font-size: 0.8rem;
+            border-left: 4px solid #22d3ee;
+        }
 
         #timerDisplay {
             display: flex;
-            flex-wrap: wrap; 
+            flex-wrap: wrap;
             gap: 8px;
             max-height: 90px;
             overflow-y: auto;
             padding: 5px 0;
             scrollbar-width: none;
         }
-        #timerDisplay::-webkit-scrollbar { display: none; }
-        
+
+        #timerDisplay::-webkit-scrollbar {
+            display: none;
+        }
+
         .time-chip {
             background: rgba(0, 31, 63, 0.7);
             border: 1.5px solid #22d3ee;
@@ -196,14 +439,15 @@
             font-weight: 800;
             display: inline-flex;
             align-items: center;
-            text-shadow: 0px 1px 3px rgba(0,0,0,0.8);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             letter-spacing: 0.5px;
         }
     </style>
 </head>
+
 <body>
-    <div class="ocean">
+    <!-- <div class="ocean">
         <div class="bg-creature fish-1">🐟</div>
         <div class="bg-creature fish-2">🐠</div>
         <div class="bg-creature fish-3">🐡</div>
@@ -216,14 +460,17 @@
         <div class="bubble bubble-1"></div>
         <div class="bubble bubble-2"></div>
         <div class="bubble bubble-3"></div>
-    </div>
-    
+    </div> -->
+
     <div id="toast">บันทึกเรียบร้อย!</div>
 
     <div id="p1" class="page active items-center text-center">
-        <div class="fish-box"><div class="fish">🐠</div></div>
+        <div class="fish-box">
+            <div class="fish">🐠</div>
+        </div>
         <h1 class="brand text-5xl font-bold mb-12 uppercase">AQUALIGHT<br><span class="text-cyan-400">PRO</span></h1>
-        <button id="startBtn" onclick="checkInitialFlow()" class="glass w-full py-6 text-white text-2xl font-bold shadow-2xl mb-4">กำลังตรวจสอบ...</button>
+        <button id="startBtn" onclick="checkInitialFlow()"
+            class="glass w-full py-6 text-white text-2xl font-bold shadow-2xl mb-4">กำลังตรวจสอบ...</button>
         <button onclick="resetSystem()" class="text-white/20 text-xs underline">ล้างค่าระบบ (Reset)</button>
     </div>
 
@@ -231,27 +478,36 @@
         <h2 class="brand text-2xl font-bold mb-8 uppercase text-cyan-400 text-center">สร้างรหัสผ่านใหม่</h2>
         <div class="glass w-full p-6 space-y-4">
             <div class="pass-container">
-                <input type="password" id="iPass" class="w-full bg-black/20 p-5 rounded-2xl text-center text-2xl font-bold border border-white/10 outline-none" placeholder="ตั้งรหัสผ่าน">
+                <input type="password" id="iPass"
+                    class="w-full bg-black/20 p-5 rounded-2xl text-center text-2xl font-bold border border-white/10 outline-none"
+                    placeholder="ตั้งรหัสผ่าน">
                 <span class="eye-btn" onclick="togglePass('iPass', this)">👁️</span>
             </div>
             <div class="pass-container">
-                <input type="password" id="iPassC" class="w-full bg-black/20 p-5 rounded-2xl text-center text-2xl font-bold border border-white/10 outline-none" placeholder="ยืนยันรหัสผ่าน">
+                <input type="password" id="iPassC"
+                    class="w-full bg-black/20 p-5 rounded-2xl text-center text-2xl font-bold border border-white/10 outline-none"
+                    placeholder="ยืนยันรหัสผ่าน">
                 <span class="eye-btn" onclick="togglePass('iPassC', this)">👁️</span>
             </div>
         </div>
-        <button onclick="saveInitPass()" class="w-full mt-10 py-6 bg-cyan-500 rounded-full text-2xl font-black shadow-lg">บันทึกรหัสผ่าน</button>
+        <button onclick="saveInitPass()"
+            class="w-full mt-10 py-6 bg-cyan-500 rounded-full text-2xl font-black shadow-lg">บันทึกรหัสผ่าน</button>
     </div>
 
     <div id="p2" class="page items-center">
         <h2 class="brand text-3xl font-bold mb-8 text-center uppercase">เข้าสู่ระบบ</h2>
-        <input type="text" id="ip" class="glass w-full p-5 mb-5 text-center text-2xl font-bold" value="192.168.1.100" readonly>
+        <input type="text" id="ip" class="glass w-full p-5 mb-5 text-center text-2xl font-bold" value="192.168.1.100"
+            readonly>
         <div class="pass-container mb-5">
-            <input type="password" id="lPass" class="glass w-full p-5 text-center text-2xl font-bold" placeholder="กรอกรหัสผ่าน">
+            <input type="password" id="lPass" class="glass w-full p-5 text-center text-2xl font-bold"
+                placeholder="กรอกรหัสผ่าน">
             <span class="eye-btn" onclick="togglePass('lPass', this)">👁️</span>
         </div>
         <div id="connStatus" class="mb-6 text-xl font-bold h-8 transition-colors duration-300 text-center"></div>
-        <button id="btnConn" onclick="checkConnection()" class="w-full py-6 bg-cyan-500 rounded-full text-2xl font-black">เชื่อมต่อบอร์ด</button>
-        <button onclick="nav('p2', 'p-change')" class="mt-10 text-cyan-400 font-bold text-xl underline uppercase">เปลี่ยนรหัสผ่านใหม่</button>
+        <button id="btnConn" onclick="checkConnection()"
+            class="w-full py-6 bg-cyan-500 rounded-full text-2xl font-black">เชื่อมต่อบอร์ด</button>
+        <button onclick="nav('p2', 'p-change')"
+            class="mt-10 text-cyan-400 font-bold text-xl underline uppercase">เปลี่ยนรหัสผ่านใหม่</button>
         <button onclick="nav('p2', 'p1')" class="mt-6 opacity-40 text-lg underline">ย้อนกลับหน้าแรก</button>
     </div>
 
@@ -259,38 +515,47 @@
         <h2 class="brand text-2xl font-bold mb-8 uppercase text-cyan-400">เปลี่ยนรหัสผ่าน</h2>
         <div class="glass w-full p-6 space-y-4">
             <div class="pass-container">
-                <input type="password" id="oldP" class="w-full bg-black/20 p-5 rounded-2xl text-center text-xl border border-white/10 outline-none" placeholder="รหัสผ่านเดิม">
+                <input type="password" id="oldP"
+                    class="w-full bg-black/20 p-5 rounded-2xl text-center text-xl border border-white/10 outline-none"
+                    placeholder="รหัสผ่านเดิม">
                 <span class="eye-btn" onclick="togglePass('oldP', this)">👁️</span>
             </div>
             <div class="pass-container">
-                <input type="password" id="newP" class="w-full bg-black/20 p-5 rounded-2xl text-center text-xl border border-white/10 outline-none" placeholder="รหัสใหม่">
+                <input type="password" id="newP"
+                    class="w-full bg-black/20 p-5 rounded-2xl text-center text-xl border border-white/10 outline-none"
+                    placeholder="รหัสใหม่">
                 <span class="eye-btn" onclick="togglePass('newP', this)">👁️</span>
             </div>
             <div class="pass-container">
-                <input type="password" id="confP" class="w-full bg-black/20 p-5 rounded-2xl text-center text-xl border border-white/10 outline-none" placeholder="ยืนยันรหัสใหม่">
+                <input type="password" id="confP"
+                    class="w-full bg-black/20 p-5 rounded-2xl text-center text-xl border border-white/10 outline-none"
+                    placeholder="ยืนยันรหัสใหม่">
                 <span class="eye-btn" onclick="togglePass('confP', this)">👁️</span>
             </div>
         </div>
         <div id="cMsg" class="mt-4 h-6 font-bold text-sm uppercase text-center"></div>
-        <button onclick="processChangePass()" class="w-full mt-6 py-5 bg-cyan-500 rounded-full text-xl font-black">อัปเดตรหัสผ่าน</button>
+        <button onclick="processChangePass()"
+            class="w-full mt-6 py-5 bg-cyan-500 rounded-full text-xl font-black">อัปเดตรหัสผ่าน</button>
         <button onclick="nav('p-change', 'p2')" class="mt-6 opacity-40 underline">ยกเลิก</button>
     </div>
 
     <div id="p3" class="page">
         <div class="flex justify-between items-center mb-6">
-            <button onclick="nav('p3', 'p2')" class="glass w-12 h-12 flex items-center justify-center rounded-full text-xl font-bold">◀</button>
+            <button onclick="nav('p3', 'p2')"
+                class="glass w-12 h-12 flex items-center justify-center rounded-full text-xl font-bold">◀</button>
             <div class="text-center">
                 <span class="text-sm opacity-80 font-bold">บอร์ด: 192.168.1.100</span>
                 <p id="currentTimeDisplay" class="text-xs text-cyan-400 font-black mt-1"></p>
             </div>
-            <button onclick="nav('p3', 'p6')" class="glass w-12 h-12 flex items-center justify-center rounded-full text-xl">📜</button>
+            <button onclick="nav('p3', 'p6')"
+                class="glass w-12 h-12 flex items-center justify-center rounded-full text-xl">📜</button>
         </div>
         <h2 class="brand text-center text-3xl font-bold uppercase mb-6">ระบบควบคุม</h2>
         <div id="lightBox" class="glass h-48 flex flex-col items-center justify-center mb-6 shrink-0">
             <div id="bulb" class="text-8xl opacity-20 transition-all duration-500">💡</div>
             <p id="st" class="text-lg mt-4 font-bold uppercase text-white/60">โหมดสแตนด์บาย</p>
         </div>
-        
+
         <div class="glass p-6 mb-6 border-2 border-cyan-500/30 flex justify-between items-center shrink-0">
             <div class="w-full pr-2">
                 <p class="text-[10px] text-cyan-400 uppercase font-black mb-1 tracking-wider">เวลาทำงานที่เลือก</p>
@@ -313,10 +578,13 @@
 
     <div id="p4" class="page">
         <div class="flex items-center mb-6">
-            <button onclick="nav('p4', 'p3')" class="glass w-12 h-12 flex items-center justify-center rounded-full text-xl font-bold">◀</button>
+            <button onclick="nav('p4', 'p3')"
+                class="glass w-12 h-12 flex items-center justify-center rounded-full text-xl font-bold">◀</button>
             <h2 class="brand flex-1 text-center text-2xl font-bold uppercase">ตั้งค่าเวลา</h2>
         </div>
-        <div class="fish-box" style="height: 60px;"><div class="fish" style="font-size: 2.5rem;">🐡</div></div>
+        <div class="fish-box" style="height: 60px;">
+            <div class="fish" style="font-size: 2.5rem;">🐡</div>
+        </div>
         <div class="space-y-6 mb-8">
             <div class="text-center">
                 <p class="text-lg text-cyan-400 mb-2 font-bold uppercase">เวลาเริ่มเปิดไฟ</p>
@@ -328,44 +596,51 @@
             </div>
         </div>
         <div class="space-y-4 pb-6">
-            <button onclick="applyNow()" class="w-full py-5 bg-cyan-500 text-white rounded-3xl text-xl font-black shadow-xl">ใช้เวลานี้ทันที</button>
-            <button onclick="saveToPreset()" class="w-full py-5 border-2 border-cyan-500/50 text-cyan-400 rounded-3xl text-xl font-black">บันทึกลงรายการ</button>
-            <button onclick="nav('p4', 'p5')" class="w-full py-3 text-white/50 text-lg font-bold underline text-center">ดูเวลาที่บันทึกไว้</button>
+            <button onclick="applyNow()"
+                class="w-full py-5 bg-cyan-500 text-white rounded-3xl text-xl font-black shadow-xl">ใช้เวลานี้ทันที</button>
+            <button onclick="saveToPreset()"
+                class="w-full py-5 border-2 border-cyan-500/50 text-cyan-400 rounded-3xl text-xl font-black">บันทึกลงรายการ</button>
+            <button onclick="nav('p4', 'p5')"
+                class="w-full py-3 text-white/50 text-lg font-bold underline text-center">ดูเวลาที่บันทึกไว้</button>
         </div>
     </div>
 
     <div id="p5" class="page">
         <div class="flex items-center mb-8 flex-shrink-0">
-            <button onclick="nav('p5', 'p4')" class="glass w-12 h-12 flex items-center justify-center rounded-full text-xl font-bold">◀</button>
+            <button onclick="nav('p5', 'p4')"
+                class="glass w-12 h-12 flex items-center justify-center rounded-full text-xl font-bold">◀</button>
             <h2 class="brand flex-1 text-center text-2xl font-bold uppercase">รายการทั้งหมด</h2>
         </div>
-        <p class="text-[10px] text-cyan-400 font-bold mb-4 text-center uppercase">ติ๊กเพื่อเลือกช่วงเวลาที่ต้องการใช้งานพร้อมกัน</p>
+        <p class="text-[10px] text-cyan-400 font-bold mb-4 text-center uppercase">
+            ติ๊กเพื่อเลือกช่วงเวลาที่ต้องการใช้งานพร้อมกัน</p>
         <div id="presetList" class="flex-1 space-y-4 pr-2 pb-6"></div>
     </div>
 
     <div id="p6" class="page">
         <div class="flex items-center mb-8 flex-shrink-0">
-            <button onclick="nav('p6', 'p3')" class="glass w-12 h-12 flex items-center justify-center rounded-full text-xl font-bold">◀</button>
+            <button onclick="nav('p6', 'p3')"
+                class="glass w-12 h-12 flex items-center justify-center rounded-full text-xl font-bold">◀</button>
             <h2 class="brand flex-1 text-center text-2xl font-bold uppercase">ประวัติการทำงาน</h2>
         </div>
         <div id="historyList" class="flex-1 space-y-2 pr-2"></div>
-        <button onclick="clearHistory()" class="mt-4 py-4 text-xs opacity-30 underline w-full text-center">ล้างประวัติ</button>
+        <button onclick="clearHistory()"
+            class="mt-4 py-4 text-xs opacity-30 underline w-full text-center">ล้างประวัติ</button>
     </div>
 
     <script>
         let isLightOn = false;
-        let lastAutoStatus = null; 
+        let lastAutoStatus = null;
         let presets = JSON.parse(localStorage.getItem('aquali_presets')) || [];
         let history = JSON.parse(localStorage.getItem('aquali_history')) || [];
-        let serverPassword = ""; 
-database.ref('appPassword').on('value', (snapshot) => {
-    serverPassword = snapshot.val();
-});
+        let serverPassword = "";
+        database.ref('appPassword').on('value', (snapshot) => {
+            serverPassword = snapshot.val();
+        });
 
-        window.onload = function() {
+        window.onload = function () {
             renderPresets();
             renderHistory();
-            updateStartButton(); 
+            updateStartButton();
             updateTimerDisplay();
         };
 
@@ -383,12 +658,12 @@ database.ref('appPassword').on('value', (snapshot) => {
 
         function checkInitialFlow() {
             const saved = localStorage.getItem('aquali_pass');
-            if (!saved) { nav('p1', 'p-init'); } 
+            if (!saved) { nav('p1', 'p-init'); }
             else { nav('p1', 'p2'); }
         }
 
         function resetSystem() {
-            if(confirm("ล้างข้อมูลรหัสผ่านทั้งหมดใช่ไหม?")) {
+            if (confirm("ล้างข้อมูลรหัสผ่านทั้งหมดใช่ไหม?")) {
                 localStorage.clear();
                 location.reload();
             }
@@ -516,7 +791,7 @@ database.ref('appPassword').on('value', (snapshot) => {
         function updateTimerDisplay() {
             const active = presets.filter(p => p.selected);
             const display = document.getElementById('timerDisplay');
-            
+
             if (active.length === 0) {
                 display.innerHTML = '<span class="opacity-40 text-sm">ยังไม่เลือกเวลา</span>';
             } else {
@@ -556,43 +831,43 @@ database.ref('appPassword').on('value', (snapshot) => {
 
         function clearHistory() { history = []; localStorage.removeItem('aquali_history'); renderHistory(); }
 
-       function setLight(status, isAuto = false) {
-    isLightOn = status;
-    const bulb = document.getElementById('bulb');
-    const st = document.getElementById('st');
-    const dot = document.getElementById('signalDot');
-    
-    bulb.style.opacity = isLightOn ? '1' : '0.2';
-    bulb.style.filter = isLightOn ? 'drop-shadow(0 0 50px gold)' : 'none';
-    st.innerText = isLightOn ? 'ไฟทำงานปกติ' : 'โหมดสแตนด์บาย';
-    st.style.color = isLightOn ? '#22d3ee' : 'rgba(255,255,255,0.6)';
-    dot.className = isLightOn ? 'status-dot dot-green' : 'status-dot dot-red';
+        function setLight(status, isAuto = false) {
+            isLightOn = status;
+            const bulb = document.getElementById('bulb');
+            const st = document.getElementById('st');
+            const dot = document.getElementById('signalDot');
 
-    if (isAuto) {
-        addHistory(status ? "ไฟเปิด (Auto ตามเวลา)" : "ไฟปิด (Auto ตามเวลา)");
-    }
-}
+            bulb.style.opacity = isLightOn ? '1' : '0.2';
+            bulb.style.filter = isLightOn ? 'drop-shadow(0 0 50px gold)' : 'none';
+            st.innerText = isLightOn ? 'ไฟทำงานปกติ' : 'โหมดสแตนด์บาย';
+            st.style.color = isLightOn ? '#22d3ee' : 'rgba(255,255,255,0.6)';
+            dot.className = isLightOn ? 'status-dot dot-green' : 'status-dot dot-red';
 
-function toggle() { 
-    const newStatus = !isLightOn;
-    setLight(newStatus, false); 
-    addHistory(newStatus ? "กดเปิดไฟเอง" : "กดปิดไฟเอง");
+            if (isAuto) {
+                addHistory(status ? "ไฟเปิด (Auto ตามเวลา)" : "ไฟปิด (Auto ตามเวลา)");
+            }
+        }
 
-    // ----- [เพิ่มใหม่] สั่งให้ส่งค่าสถานะขึ้น Firebase ทันทีที่กดปุ่ม -----
-    database.ref('lightStatus').set(newStatus);
-}
+        function toggle() {
+            const newStatus = !isLightOn;
+            setLight(newStatus, false);
+            addHistory(newStatus ? "กดเปิดไฟเอง" : "กดปิดไฟเอง");
 
-       function runSystem() {
+            // ----- [เพิ่มใหม่] สั่งให้ส่งค่าสถานะขึ้น Firebase ทันทีที่กดปุ่ม -----
+            database.ref('lightStatus').set(newStatus);
+        }
+
+        function runSystem() {
             const now = new Date();
             const hours = now.getHours().toString().padStart(2, '0');
             const minutes = now.getMinutes().toString().padStart(2, '0');
             const sec = now.getSeconds().toString().padStart(2, '0');
-            
+
             const currentTime = hours + ":" + minutes;
             const fullTimeStr = hours + ":" + minutes + ":" + sec;
-            
+
             // 1. แสดงเวลาอัปเดตแบบ Real-time บนหน้าแอป
-            if(document.getElementById('currentTimeDisplay')) {
+            if (document.getElementById('currentTimeDisplay')) {
                 document.getElementById('currentTimeDisplay').innerText = `TIME: ${fullTimeStr}`;
             }
 
@@ -600,7 +875,7 @@ function toggle() {
             if (typeof database !== 'undefined') {
                 database.ref('currentTime').set(fullTimeStr);
             }
-            
+
             let shouldBeOn = false;
             let hasActiveTimer = false;
 
@@ -619,8 +894,8 @@ function toggle() {
             if (hasActiveTimer) {
                 if (shouldBeOn && !isLightOn) {
                     setLight(true, true);
-                    database.ref('lightStatus').set(true); 
-                } 
+                    database.ref('lightStatus').set(true);
+                }
                 else if (!shouldBeOn && isLightOn) {
                     setLight(false, true);
                     database.ref('lightStatus').set(false);
@@ -629,46 +904,46 @@ function toggle() {
         }
         setInterval(runSystem, 1000);
     </script>
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
 
     <script>
-      const firebaseConfig = {
-        apiKey: "AIzaSyA1Mv9qkKfzALgUgYxspnWxILtZqKt8WS0", 
-        authDomain: "aqprr-8fd4a.firebaseapp.com",
-        databaseURL: "https://aqprr-8fd4a-default-rtdb.asia-southeast1.firebasedatabase.app", 
-        projectId: "aqprr-8fd4a",
-        storageBucket: "aqprr-8fd4a.firebasestorage.app",
-        messagingSenderId: "132622264636",
-        appId: "1:132622264636:web:8e73bd05d2330871fad639"
-      };
+        const firebaseConfig = {
+            apiKey: "AIzaSyA1Mv9qkKfzALgUgYxspnWxILtZqKt8WS0",
+            authDomain: "aqprr-8fd4a.firebaseapp.com",
+            databaseURL: "https://aqprr-8fd4a-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "aqprr-8fd4a",
+            storageBucket: "aqprr-8fd4a.firebasestorage.app",
+            messagingSenderId: "132622264636",
+            appId: "1:132622264636:web:8e73bd05d2330871fad639"
+        };
 
-      // สั่งให้ Firebase เริ่มทำงาน
-      firebase.initializeApp(firebaseConfig);
-      const database = firebase.database();
-      // คอยฟังการเปลี่ยนแปลงจาก Firebase ตลอดเวลา
-    database.ref('lightStatus').on('value', (snapshot) => {
-        const currentStatus = snapshot.val();
-        if (currentStatus !== null && currentStatus !== isLightOn) {
-            // ถ้าสถานะในฐานข้อมูลเปลี่ยน ให้แอปเปลี่ยนตาม
-            setLight(currentStatus, false); 
-        }
-    });
+        // สั่งให้ Firebase เริ่มทำงาน
+        firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+        // คอยฟังการเปลี่ยนแปลงจาก Firebase ตลอดเวลา
+        database.ref('lightStatus').on('value', (snapshot) => {
+            const currentStatus = snapshot.val();
+            if (currentStatus !== null && currentStatus !== isLightOn) {
+                // ถ้าสถานะในฐานข้อมูลเปลี่ยน ให้แอปเปลี่ยนตาม
+                setLight(currentStatus, false);
+            }
+        });
 
-      console.log("Firebase เชื่อมต่อสำเร็จแล้วจ้า!");
+        console.log("Firebase เชื่อมต่อสำเร็จแล้วจ้า!");
 
-      // ฟังก์ชันยามเฝ้าเวลา
+        // ฟังก์ชันยามเฝ้าเวลา
         function runSystem() {
             // 1. ดึงเวลาปัจจุบันจากเครื่องคอม/มือถือ
             const now = new Date();
             const hours = now.getHours().toString().padStart(2, '0');
             const minutes = now.getMinutes().toString().padStart(2, '0');
             const sec = now.getSeconds().toString().padStart(2, '0');
-            
+
             // สร้างรูปแบบเวลาไว้ใช้งาน
             const currentTime = hours + ":" + minutes; // แบบ HH:MM ไว้เทียบเวลา
             const fullTimeStr = hours + ":" + minutes + ":" + sec; // แบบมีวินาที ไว้โชว์
-            
+
             // 2. อัปเดตเวลาบนหน้าเว็บให้วิ่งเป็นวินาที
             const timeDisplay = document.getElementById('currentTimeDisplay');
             if (timeDisplay) {
@@ -677,7 +952,7 @@ function toggle() {
 
             // (แถม) ส่งเวลาปัจจุบันขึ้น Firebase ด้วย เผื่อบอร์ดเอาไปใช้
             database.ref('currentTime').set(fullTimeStr);
-            
+
             // 3. เทียบเวลาปัจจุบัน กับเวลาที่เราตั้งไว้ (Presets)
             let shouldBeOn = false;
             let hasActiveTimer = false;
@@ -699,17 +974,17 @@ function toggle() {
                 if (shouldBeOn && !isLightOn) {
                     setLight(true, true); // อัปเดตหน้าจอแอปว่าไฟเปิด
                     database.ref('lightStatus').set(true); // สั่ง Firebase ว่าให้เปิดไฟ
-                } 
+                }
                 else if (!shouldBeOn && isLightOn) {
                     setLight(false, true); // อัปเดตหน้าจอแอปว่าไฟปิด
                     database.ref('lightStatus').set(false); // สั่ง Firebase ว่าให้ปิดไฟ
                 }
             }
         }
-        
+
         // บรรทัดนี้สำคัญมาก! คือคำสั่งปลุกยามให้มาทำงาน(รันฟังก์ชันข้างบน) ทุกๆ 1 วินาที
         setInterval(runSystem, 1000);
     </script>
 </body>
-</html>
 
+</html>
